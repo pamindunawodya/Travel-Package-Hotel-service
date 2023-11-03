@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>In-memory User Form</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="assests/bootstrap/css/bootstrap.min.css">
+
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light ">
+    <div class="container-fluid ">
+        <a class="navbar-brand text-danger" href="#" id="btnDashboard">User Admin DashBoard</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link text-info" aria-current="page" href="#customerform"
+                       id="btnCustomer">Hotel Admin DashBoard</a>
+                </li>
+
+
+            </ul>
+            <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-info text-dark" type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+</nav>
+
+
+<!--Customer Form-->
+
+<div class="container-fluid mt-5" id="customerform">
+    <h1 class="mx-3">Hotel Form</h1>
+    <div class="row mt-3 p-3">
+        <div class="col-xl-4 col-lg-6">
+            <div class="bg-white card">
+                <div class="bg-dark card-header text-white" style="font-size: 25px">
+                    Hotel Details
+                </div>
+                <div class="card-body bg-white text-dark">
+                    <div class="row p-3 mt-3">
+                        <div class="form-group col-6">
+                            <lable> Name:</lable>
+                            <input type="text" id="txtName0" class="form-control">
+                            <span class="control-error" id="lblhotelname"></span>
+                        </div>
+                        <div class="form-group col-6">
+                            <lable>Category :</lable>
+                            <input type="text" id="txtCategory0" class="form-control">
+                            <span class="control-error" id="lblhotelcategory"></span>
+                        </div>
+                    </div>
+                    <div class="row p-2 mt-3">
+                        <div class="form-group col-12">
+                            <lable>Location:</lable>
+                            <input type="text" id="txtLocation0" class="form-control">
+                            <span class="control-error" id="lbllocation"></span>
+                        </div>
+                    </div>
+                    <div class="row p-2 mt-3">
+                        <div class="form-group col-12">
+                            <lable>Contact:</lable>
+                            <input type="text" id="txtContact0" class="form-control">
+                            <span class="control-error" id="lblcontact"></span>
+                        </div>
+                    </div>
+                    <div class="row p-2 mt-3">
+                        <div class="form-group col-12">
+                            <lable>E-mail:</lable>
+                            <input type="text" id="txtEmail0" class="form-control">
+                            <span class="control-error" id="lblemail"></span>
+                        </div>
+                    </div>
+
+                    <div class="row p-2 mt-3">
+                        <div class="form-group col-12">
+                            <lable>Pets Allows OR Not:</lable>
+                            <input type="text" id="txtpets0" class="form-control">
+                            <span class="control-error" id="lblpets"></span>
+                        </div>
+                    </div>
+
+                    <div class="row p-2 mt-3">
+                        <div class="form-group col-12">
+                            <label for="txtHotelImage0" class="form-label "> Hotel Image</label>
+                            <input style="border: 1px solid gray" class="form-control  " type="file" id="txtHotelImage0">
+                            <span class="control-error" id="lblhotelImage"></span>
+                        </div>
+                    </div>
+
+                    <div class="row p-2 mt-3">
+                        <div class="form-group col-12">
+                            <lable>Option 1:</lable>
+                            <input type="text" id="txtOption1" class="form-control">
+                            <span class="control-error" id="lbloption1"></span>
+                        </div>
+                    </div>
+
+                    <div class="row p-2 mt-3">
+                        <div class="form-group col-12">
+                            <lable>Option 2:</lable>
+                            <input type="text" id="txtOption2" class="form-control">
+                            <span class="control-error" id="lbloption2"></span>
+                        </div>
+                    </div>
+
+                    <div class="row p-2 mt-3">
+                        <div class="form-group col-12">
+                            <lable>Option 3:</lable>
+                            <input type="text" id="txtOption3" class="form-control">
+                            <span class="control-error" id="lbloption3"></span>
+                        </div>
+                    </div>
+
+
+
+                    <div class="row p-2 mt-3">
+                        <div class="form-group col-12">
+                            <button type="button" class="btn btn-outline-success fw-bold" id="btnHotelAdd">Add</button>
+                            <button type="button" class="btn btn-outline-warning fw-bold" id="btnHotelUpdate">UPDATE</button>
+                            <button type="button" class="btn btn-outline-danger fw-bold" id="btnHotelDelete">DELETE</button>
+                            <button type="button" class="btn btn-warning fw-bold" id="btnHotelGetAll">GetAll</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-8 col-lg-6">
+            <table id="tblUser" class="table table-bordered table-hover border mt-2 p-3 ">
+                <thead class="bg-primary text-white">
+                <tr>
+                    <th scope="col"> id</th>
+                    <th scope="col"> Name</th>
+                    <th scope="col"> category</th>
+                    <th scope="col">location</th>
+                    <th scope="col">contact</th>
+                    <th scope="col">e-mail</th>
+                    <th scope="col">pets Allow OR Not</th>
+                    <th scope="col">Image</th>
+                    <th scope="col">Option 1</th>
+                    <th scope="col">Option 2</th>
+                    <th scope="col">Option 3</th>
+                </tr>
+                </thead>
+                <tbody class="bg-secondary text-white" id="tblCustomerTbody">
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+<script src="html/js/jquery-3.4.1.min.js"></script>
+
+<script src="../src/js/hoteladdform.js"></script>
+
+
+
+
+
+</body>
+</html>
